@@ -1,0 +1,65 @@
+<div class="row video-details h-75 w-100 d-flex">
+  <!-- Start camera section  -->
+  <div class="col-md-9">
+    <div class="display-cover">
+      <canvas id="meter" width="500" height="50"></canvas>
+      <!-- <div class="video-options">
+          <select name="" id="" class="form-control" (change)="cameraSelect($event)">
+            <option value="" disabled selected>Select camera</option>
+            <ng-container *ngFor="let camera of videoInput">
+              <option [value]="camera.deviceId" [selected]="camera.deviceId === defaultCamera">
+                {{ camera.label || "Camera" }}
+              </option>
+            </ng-container>
+          </select>
+        </div> -->
+
+      <!-- <div class="controls">
+        <button class="btn btn-outline-success" title="Stop audio recoding" (click)="stopAudioRecording()"
+          *ngIf="isAudioPlay">
+          <i>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM8.58579 8.58579C8 9.17157 8 10.1144 8 12C8 13.8856 8 14.8284 8.58579 15.4142C9.17157 16 10.1144 16 12 16C13.8856 16 14.8284 16 15.4142 15.4142C16 14.8284 16 13.8856 16 12C16 10.1144 16 9.17157 15.4142 8.58579C14.8284 8 13.8856 8 12 8C10.1144 8 9.17157 8 8.58579 8.58579Z"
+                fill="#1C274C" />
+            </svg>
+          </i>
+        </button>
+        <button class="btn btn-outline-success" title="Start audio recoding" (click)="startAudioRecording()"
+          *ngIf="!isAudioPlay">
+          <i>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2" stroke="#1C274C" stroke-width="1.5"
+                stroke-linecap="round" />
+              <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2" stroke="#1C274C" stroke-width="1.5"
+                stroke-linecap="round" stroke-dasharray="4 3" />
+              <path
+                d="M15.4137 10.941C16.1954 11.4026 16.1954 12.5974 15.4137 13.059L10.6935 15.8458C9.93371 16.2944 9 15.7105 9 14.7868L9 9.21316C9 8.28947 9.93371 7.70561 10.6935 8.15419L15.4137 10.941Z"
+                stroke="#1C274C" stroke-width="1.5" />
+            </svg>
+          </i>
+        </button>
+      </div> -->
+      <!-- <div class="footer">
+          <button class="btn btn-danger play"
+            (click)="mute()" title="Play">
+            <i>
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 10.5C17.5 13.5376 15.0376 16 12 16M12 16C8.96243 16 6.5 13.5376 6.5 10.5M12 16V20M8 20H12M12 20H16M12 13C10.6193 13 9.5 11.8807 9.5 10.5V6.5C9.5 5.11929 10.6193 4 12 4C13.3807 4 14.5 5.11929 14.5 6.5V10.5C14.5 11.8807 13.3807 13 12 13Z"/>
+              </svg>
+            </i>
+          </button>
+        </div> -->
+    </div>
+  </div>
+  <!-- End camera section  -->
+
+  <!-- Start chapters image  section  -->
+  <div class="col-md-3 screenshot-container">
+    <canvas class="canvas-element d-none"></canvas>
+    <ng-container *ngFor="let audioSrc of audioRecoded">
+      <audio controls playsinline [src]="audioSrc"></audio>
+    </ng-container>
+  </div>
+  <!-- End chapters image  section  -->
+</div>

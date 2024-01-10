@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3 custome-pointer" *ngFor="let value of allActions">
+      <div class="card d-flex justify-content-center align-items-center" (click)="gotoRoom(value.url)">
+        <div class="card-body">
+          <img [src]="value.image" alt="image">
+          <h6 class="mt-2">{{value.title}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

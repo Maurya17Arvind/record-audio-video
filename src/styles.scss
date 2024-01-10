@@ -1,1 +1,152 @@
-/* You can add global styles to this file, and also import other style files */
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.screenshot-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+
+  .outside {
+    position: relative;
+    cursor: pointer;
+    width: auto;
+    height: 90px;
+
+    &:hover {
+      .screenshot-image {
+        filter: blur(1px);
+      }
+
+      .screenshot-download {
+        opacity: 1;
+      }
+    }
+  }
+
+  .screenshot-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 2px solid whitesmoke;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    bottom: 5px;
+    left: 10px;
+    background: white;
+  }
+
+  .screenshot-download {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: #fff;
+  }
+}
+
+.video-details {
+  margin: 5% auto;
+}
+
+.display-cover {
+  width: 100%;
+  height: 85%;
+  position: relative;
+
+  video {
+    width: 100%;
+    max-height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+  }
+
+  .video-options {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+  }
+}
+
+.controls {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+
+  >button {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 6px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover svg {
+      color: #fff;
+    }
+  }
+
+  // button {
+  //   &:nth-child(1) {
+  //     border: 2px solid #d2002e;
+  //     svg {
+  //       color: #d2002e;
+  //     }
+  //   }
+
+  //   &:nth-child(2) {
+  //     border: 2px solid #008496;
+
+  //     svg {
+  //       color: #008496;
+  //     }
+  //   }
+
+  //   &:nth-child(3) {
+  //     border: 2px solid #00b541;
+
+  //     svg {
+  //       color: #00b541;
+  //     }
+  //   }
+  // }
+
+  // >button {
+  //   width: 45px;
+  //   height: 45px;
+  //   text-align: center;
+  //   border-radius: 100%;
+  //   margin: 0 6px;
+  //   background: transparent;
+  //   &:hover svg {
+  //     color: white;
+  //   }
+  // }
+}
+
+.footer {
+  position: absolute;
+  right: 60%;
+  top: 90%;
+  display: flex;
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+  .controls {
+    flex-direction: column;
+
+    button {
+      margin: 5px 0 !important;
+    }
+  }
+}
+
+// .play i svg {
+//   margin-left: 6px;
+// }
